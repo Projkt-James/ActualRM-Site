@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        Landing Section
+        <h1>Your <span class="light">Repairs</span> <br/>partner</h1>
     </div>
 </template>
 
@@ -16,6 +16,32 @@ export default class extends Vue {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
+    @import "../../../scss/main.scss";
+
+    div.container {
+        width: 100%;
+        height: 100vh;
+        background: $actual-orange;
+
+        position: relative;
+
+        padding: 0 100px;
+
+        h1 {
+            position: absolute;
+            top: 55%;
+
+            color: white;
+            font-family: 'Open Sans';
+            font-size: 70px;
+            font-weight: 600;
+            text-transform: uppercase;
+
+            span.light {
+                font-weight: 300;
+            }
+        }
+    }
 </style>
