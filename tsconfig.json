@@ -1,0 +1,22 @@
+{
+  "extends": "@nuxt/typescript",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "types": [
+      "@nuxt/vue-app",
+      "@types/node",
+    ],
+    "paths": {
+      "~/*": ["src/*"],
+    },
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.vue"
+  ],
+  "exclude": [
+    "../../node_modules"
+  ]
+}
