@@ -27,15 +27,16 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
 
-// @ts-ignore
-@Component({
-    components: {}
-})
-export default class extends Vue {
-}
+    import Vue from 'vue';
+    import Component from 'vue-class-component';
+
+    // @ts-ignore
+    @Component({
+        components: {}
+    })
+    export default class extends Vue {}
+
 </script>
 
 <style lang="scss" scoped>
@@ -82,7 +83,7 @@ export default class extends Vue {
                     font-size: 90px;
                     font-weight: 300;
                 }
-
+                // TODO: Move underblock into standard component
                 .underblock {
                     background-color: #ea6c56;
                     width: 15%;
