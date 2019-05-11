@@ -1,19 +1,21 @@
 <template>
     <div class="container">
-        <h1>Your <span class="light">Repairs</span> <br/>partner</h1>
+        <div class="overlay">
+            <h1>Your <span class="light">Repairs</span> <br/>partner</h1>
+        </div>
     </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
+    import Vue from 'vue';
+    import Component from 'vue-class-component';
 
-// @ts-ignore
-@Component({
-    components: {}
-})
-export default class extends Vue {
-}
+    // @ts-ignore
+    @Component({
+        components: {}
+    })
+    export default class extends Vue {
+    }
 </script>
 
 <style lang="scss" scoped>
@@ -23,11 +25,20 @@ export default class extends Vue {
     div.container {
         width: 100%;
         height: 100vh;
-        background: $actual-orange;
+        
+        background-image: url("../../../assets/bg.png");
 
         position: relative;
 
-        padding: 0 100px;
+        .overlay {
+            width: 100%;
+            height: 100%;
+
+            background: $actual-orange;
+            opacity: 0.94;
+
+            padding: 0 100px;
+        }
 
         h1 {
             position: absolute;
