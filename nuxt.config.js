@@ -13,5 +13,6 @@ export default {
         ]
     },
 
-    modules: []
+    modules: [],
+    buildModules: ['@nuxt/typescript-build']
 }
