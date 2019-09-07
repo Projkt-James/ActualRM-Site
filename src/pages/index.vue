@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Navbar />
         <LandingSection />
         <CompanySection />
         <ServicesSection />
@@ -12,6 +13,7 @@
 import { Component, Vue } from "vue-property-decorator";
 
 // Sections Components
+import Navbar from "~/components/ui-element/nav/index.vue";
 import LandingSection from "~/components/sections/landing/index.vue";
 import CompanySection from "~/components/sections/company/index.vue";
 import ServicesSection from "~/components/sections/services/index.vue";
@@ -21,6 +23,7 @@ import ContactSection from "~/components/sections/contact/index.vue";
 @Component({
     name: 'app',
     components: {
+        Navbar,
         LandingSection,
         CompanySection,
         ServicesSection,
@@ -28,7 +31,6 @@ import ContactSection from "~/components/sections/contact/index.vue";
         ContactSection
     }
 })
-// @ts-ignore
 export default class Index extends Vue {
 
 }

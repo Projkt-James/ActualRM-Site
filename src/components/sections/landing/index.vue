@@ -42,7 +42,7 @@
 
         h1 {
             position: absolute;
-            top: 55%;
+            bottom: 12%;
 
             color: white;
             font-family: 'Open Sans';
