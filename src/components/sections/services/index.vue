@@ -29,46 +29,46 @@
 
 <script lang="ts">
 
-import Vue from 'vue';
-import Component from 'vue-class-component';
+    import Vue from 'vue';
+    import Component from 'vue-class-component';
 
-class ServiceElement {
+    class ServiceElement {
 
-    title: string;
-    text: string;
+        title: string;
+        text: string;
 
-    constructor(title: string, text: string) {
-        this.title = title;
-        this.text = text;
+        constructor(title: string, text: string) {
+            this.title = title;
+            this.text = text;
+        }
     }
-}
 
-@Component({
-    components: {
-        
+    @Component({
+        components: {
+            
+        }
+    })
+    export default class extends Vue {
+
+        serviceItems: ServiceElement[] = [
+            new ServiceElement(
+                "Painting & Plastering", 
+                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod"
+            ),
+            new ServiceElement(
+                "Tiling", 
+                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod"
+            ),
+            new ServiceElement("Landscaping", ""),
+            new ServiceElement("Element4", ""),
+            new ServiceElement("Element5", "")
+        ];
+
     }
-})
-export default class extends Vue {
-
-    serviceItems: ServiceElement[] = [
-        new ServiceElement(
-            "Painting & Plastering", 
-            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod"
-        ),
-        new ServiceElement(
-            "Tiling", 
-            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod"
-        ),
-        new ServiceElement("Landscaping", ""),
-        new ServiceElement("Element4", ""),
-        new ServiceElement("Element5", "")
-    ];
-
-}
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
     @import url('https://fonts.googleapis.com/css?family=Lato:300,900|Raleway:700');
 
@@ -173,6 +173,7 @@ export default class extends Vue {
                                 }
                                 h1 {
                                     margin-left: 40px;
+                                    margin-top: 10px;
 
                                     color: #333;
                                     font-size: 25px;
@@ -182,8 +183,8 @@ export default class extends Vue {
                             }
 
                             p {
-                                color: #b1b1b1;
-                                font-size: 20px;
+                                color: #b3b3b3;
+                                font-size: 18px;
                                 font-family: 'Lato', sans-serif;
                                 font-weight: 300;
                             }

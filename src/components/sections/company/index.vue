@@ -31,7 +31,6 @@
     import Vue from 'vue';
     import Component from 'vue-class-component';
 
-    // @ts-ignore
     @Component({
         components: {}
     })
@@ -53,16 +52,18 @@
 
         #content {
             position: relative;
-            width: 70%;
+            width: 80%;
 
             display: flex;
-            justify-content: space-between
+            justify-content: center;
+            align-items: center;
         }
 
         section.qld {
-            width: 600px;
+            width: 35%;
             height: 50%;
             display: block;
+            margin-right: 10%;
         }
 
         section.text-area {
@@ -77,10 +78,10 @@
                     font-family: 'Lato', sans-serif;
                 }
                 h1 {
-                    font-size: 100px;
+                    font-size: 90px;
                 }
                 h2 {
-                    font-size: 90px;
+                    font-size: 80px;
                     font-weight: 300;
                 }
                 // TODO: Move underblock into standard component

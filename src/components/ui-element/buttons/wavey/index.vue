@@ -8,18 +8,18 @@
 
 import { Component, Vue} from "vue-property-decorator";
 
-@Component({
-    props: {
-        text: String
-    },
-    components: {}
-})
-export default class extends Vue {
-}
+    @Component({
+        props: {
+            text: String
+        },
+        components: {}
+    })
+    export default class extends Vue {
+    }
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
     @import "~/scss/main.scss";
 

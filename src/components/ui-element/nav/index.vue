@@ -14,18 +14,17 @@
 
 <script lang="ts">
 
-import { Component, Vue } from "vue-property-decorator";
+    import { Component, Vue } from "vue-property-decorator";
 
-import ContactButton from "~/components/ui-element/buttons/wavey/index.vue";
+    import ContactButton from "~/components/ui-element/buttons/wavey/index.vue";
 
-@Component({
-    components: {
-        ContactButton
-    }
-})
-export default class extends Vue {
-    
-}
+    @Component({
+        components: {
+            ContactButton
+        }
+    })
+    export default class extends Vue {}
+
 </script>
 
 <style lang="scss">
@@ -79,8 +78,6 @@ export default class extends Vue {
                     }
                 }
             }
-
-            // TODO button
         }
     }
 
