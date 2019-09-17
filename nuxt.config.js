@@ -12,6 +12,7 @@ export default {
             { "http-equiv": "X-UA-Compatible", content: "IE=edge"} 
         ]
     },
+    plugins: [{ src: "~/plugins/google-maps.js"}],
 
     modules: [],
     buildModules: ['@nuxt/typescript-build']

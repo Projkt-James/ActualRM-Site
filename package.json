@@ -18,5 +18,9 @@
     "@nuxt/typescript-runtime": "^0.1.5",
     "css-loader": "^3.2.0",
     "nuxt": "^2.9.2"
+  },
+  "dependencies": {
+    "nuxt": "latest",
+    "vue-googlemaps": "^0.1.2"
   }
 }

@@ -22,7 +22,14 @@
 
             
         </div>
-        <div id="map-placeholder"></div>
+
+        <!-- TODO: Break this out to wrapper component -->
+        <googlemaps-map
+            id="map"
+            :center="{lat: -25.363, lng: 131.044}"
+            :zoom="7"
+            :options="mapOptions"
+        />
     </div>
 </template>
 
@@ -30,10 +37,20 @@
     import Vue from 'vue';
     import Component from 'vue-class-component';
 
+    import MapStyle from '~/map-style.js';
+
     @Component({
         components: {}
     })
-    export default class extends Vue {}
+    export default class extends Vue {
+
+        mapOptions: any = {
+            disableDefaultUI: true,
+            styles: MapStyle
+        };
+        styles: any = MapStyle;
+
+    }
 </script>
 
 <style lang="scss" scoped>
@@ -124,13 +141,11 @@
             }
         }
 
-        #map-placeholder {
+        #map {
             width: 100%;
             height: 400px;
 
-            background-color: #f3f3f3;
-
-            display: block;
+            z-index: -1;
         }
     }
 </style>
