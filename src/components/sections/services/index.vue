@@ -9,57 +9,62 @@
                 <span class="underblock"></span>
             </header>
             
-            <div id="services">
-                <div id="service-item" v-for="item in serviceItems" :key="item.title">
-                    <header>
-                        <span></span>
-                        <h1>{{ item.title }}</h1>
-                    </header>
-                    <p>{{ item.text }}</p>
+            <div id="services-grid">
+                <div id="services-row">
+                    <div id="service-item" v-for="item in serviceItems" :key="item.title">
+                        <div id="service-item-wrapper">
+                            <header>
+                                <span></span>
+                                <h1>{{ item.title }}</h1>
+                            </header>
+                            <p>{{ item.text }}</p>
+                        </div>
+                    </div>
                 </div>
-                
             </div>
+
         </div>
     </div>
 </template>
 
 <script lang="ts">
 
-    import Vue from 'vue';
-    import Component from 'vue-class-component';
+import Vue from 'vue';
+import Component from 'vue-class-component';
 
-    class ServiceElement {
+class ServiceElement {
 
-        title: string;
-        text: string;
+    title: string;
+    text: string;
 
-        constructor(title: string, text: string) {
-            this.title = title;
-            this.text = text;
-        }
+    constructor(title: string, text: string) {
+        this.title = title;
+        this.text = text;
     }
+}
 
-    // @ts-ignore
-    @Component({
-        components: {}
-    })
-    export default class extends Vue {
-
-        serviceItems: ServiceElement[] = [
-            new ServiceElement(
-                "Painting & Plastering", 
-                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod"
-            ),
-            new ServiceElement(
-                "Tiling", 
-                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod"
-            ),
-            new ServiceElement("Landscaping", ""),
-            new ServiceElement("Element4", ""),
-            new ServiceElement("Element5", "")
-        ];
-
+@Component({
+    components: {
+        
     }
+})
+export default class extends Vue {
+
+    serviceItems: ServiceElement[] = [
+        new ServiceElement(
+            "Painting & Plastering", 
+            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod"
+        ),
+        new ServiceElement(
+            "Tiling", 
+            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod"
+        ),
+        new ServiceElement("Landscaping", ""),
+        new ServiceElement("Element4", ""),
+        new ServiceElement("Element5", "")
+    ];
+
+}
 
 </script>
 
@@ -101,51 +106,88 @@
                 }
             }
 
-            #services {
+            #services-grid {
 
-                display: flex;
-                justify-content: flex-start;
-                align-items: baseline;
-                flex-flow: wrap;
-                margin-top: 50px;
+                margin: 50px auto;
 
-                #service-item {
-                    width: 360px;
-                    max-width: 360px;
-                    min-height: 220px;
+                @media(max-width: 1000px) {
+                    margin: 50px 100px;
+                }
+
+                #services-row {
                     
-                    margin: 20px 25px;
-                    padding: 20px 40px;
-                    background-color: #fafafa;
-                    border: 2px solid #f4f4f4;
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: flex-start;
+                    align-content: flex-start;
 
-                    overflow: hidden;
+                    #service-item {
+                        
+                        width: 400px;
+                        height: 300px;
 
-                    header {
+                        padding: 20px;
 
-                        display: flex;
+                        position: relative;
+                        box-sizing: border-box;
 
-                        span {
-                            min-width: 100px;
-                            height: 100px;
-                            background-color: #ea6c5685;
-                            display: block;
+                        flex-basis: 100%;
+                        -ms-flex: auto;
+
+                        
+                        @media(min-width: 1055px) {
+                            flex-basis: 50%;
                         }
-                        h1 {
-                            margin-left: 40px;
-
-                            color: #333;
-                            font-size: 25px;
-                            font-family: 'Raleway', sans-serif;
-                            text-transform: uppercase
+                        @media(min-width: 1583px) {
+                            flex-basis: 33.33%;
                         }
-                    }
+                        @media(min-width: 2111px) {
+                            flex-basis: 25%;
+                        }
 
-                    p {
-                        color: #b1b1b1;
-                        font-size: 20px;
-                        font-family: 'Lato', sans-serif;
-                        font-weight: 300;
+
+                        #service-item-wrapper {
+                            
+                            width: 100%;
+                            height: 100%;
+
+                            position: relative;
+                            box-sizing: border-box;
+                            
+                            padding: 5%;
+                            border: 2px solid #f4f4f4;
+
+                            background-color: #fafafa;
+
+                            overflow: hidden;
+
+                            header {
+
+                                display: flex;
+
+                                span {
+                                    min-width: 100px;
+                                    height: 100px;
+                                    background-color: #ea6c5685;
+                                    display: block;
+                                }
+                                h1 {
+                                    margin-left: 40px;
+
+                                    color: #333;
+                                    font-size: 25px;
+                                    font-family: 'Raleway', sans-serif;
+                                    text-transform: uppercase
+                                }
+                            }
+
+                            p {
+                                color: #b1b1b1;
+                                font-size: 20px;
+                                font-family: 'Lato', sans-serif;
+                                font-weight: 300;
+                            }
+                        }
                     }
                 }
             }
