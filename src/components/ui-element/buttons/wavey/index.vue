@@ -1,17 +1,20 @@
 <template>
     <button>
-        Contact Us
+        {{ text }}
     </button>
 </template>
 
 <script lang="ts">
 
 import { Component, Vue} from "vue-property-decorator";
+
 @Component({
+    props: {
+        text: String
+    },
     components: {}
 })
 export default class extends Vue {
-    
 }
 
 </script>
@@ -26,7 +29,7 @@ export default class extends Vue {
         border-radius: 5px;
         background: transparent;
 
-        color: #ea6c56;
+        color: $actual-orange;
         font-size: 0.8em;
         font-weight: 600;
         font-family: 'Open Sans', sans-serif;

@@ -7,7 +7,7 @@
                 <li>Our Services</li>
                 <li>Partners</li>
             </ul>
-            <ContactButton></ContactButton>
+            <ContactButton text="Contact Us"></ContactButton>
         </div>
     </nav>
 </template>
