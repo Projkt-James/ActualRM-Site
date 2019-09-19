@@ -14,6 +14,6 @@ export default {
     },
     plugins: [{ src: "~/plugins/google-maps.js"}],
 
-    modules: [],
+    modules: ['vue-scrollto/nuxt'],
     buildModules: ['@nuxt/typescript-build']
 }

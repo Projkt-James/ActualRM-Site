@@ -9,18 +9,19 @@
     "generate": "nuxt generate"
   },
   "devDependencies": {
-    "node-sass": "^4.12.0",
-    "sass-loader": "^7.3.1",
-    "typescript": "^3.6.2",
-    "vue-property-decorator": "^7.3.0",
-    "vuex": "^3.1.1",
-    "@nuxt/typescript-build": "^0.2.6",
-    "@nuxt/typescript-runtime": "^0.1.5",
+    "@nuxt/typescript-build": "^0.2.8",
+    "@nuxt/typescript-runtime": "^0.1.6",
     "css-loader": "^3.2.0",
-    "nuxt": "^2.9.2"
+    "node-sass": "^4.12.0",
+    "nuxt": "^2.9.2",
+    "sass-loader": "^7.3.1",
+    "typescript": "^3.6.3",
+    "vue-property-decorator": "^7.3.0",
+    "vuex": "^3.1.1"
   },
   "dependencies": {
     "nuxt": "latest",
-    "vue-googlemaps": "^0.1.2"
+    "vue-googlemaps": "^0.1.2",
+    "vue-scrollto": "^2.17.1"
   }
 }

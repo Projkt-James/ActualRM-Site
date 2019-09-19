@@ -3,11 +3,15 @@
         <div class="left"></div>
         <div class="right">
             <ul>
-                <li>Company</li>
-                <li>Our Services</li>
-                <li>Partners</li>
+                <li v-scroll-to="'#company-container'">Company</li>
+                <li v-scroll-to="{
+                    el: '#services-container',
+                    offset: -125
+                }">
+                    Our Services
+                </li>
             </ul>
-            <ContactButton text="Contact Us"></ContactButton>
+            <ContactButton text="Contact Us" v-scroll-to="'#contact-container'"></ContactButton>
         </div>
     </nav>
 </template>
@@ -63,6 +67,7 @@
                 list-style: none;
 
                 li {
+                    user-select: none;
                     padding: 0 20px;
                     display: inline;
 

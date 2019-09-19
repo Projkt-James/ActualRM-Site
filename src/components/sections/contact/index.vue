@@ -1,5 +1,5 @@
 <template>
-    <div class="contact-container">
+    <div id="contact-container">
         
         <div id="content">
             <section class="contact">
@@ -57,7 +57,7 @@
 
     @import "../../../scss/main.scss";
 
-    .contact-container {
+    #contact-container {
 
         width: 100%;
         min-height: calc(100vh - 100px);
