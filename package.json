@@ -17,10 +17,10 @@
     "sass-loader": "^7.3.1",
     "typescript": "^3.6.3",
     "vue-property-decorator": "^7.3.0",
+    "vue-svg-loader": "^0.12.0",
     "vuex": "^3.1.1"
   },
   "dependencies": {
-    "nuxt": "latest",
     "vue-googlemaps": "^0.1.2",
     "vue-scrollto": "^2.17.1"
   }

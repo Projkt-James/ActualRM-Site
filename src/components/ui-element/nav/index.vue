@@ -1,7 +1,9 @@
 <template>
     <nav>
-        <div class="left"></div>
-        <div class="right">
+        <div class="pull-left">
+            <ActualLogo />
+        </div>
+        <div class="pull-right">
             <ul>
                 <li v-scroll-to="'#company-container'">Company</li>
                 <li v-scroll-to="{
@@ -19,23 +21,27 @@
 <script lang="ts">
 
     import { Component, Vue } from "vue-property-decorator";
+    // @ts-ignore
+    import ActualLogo from "../../../assets/logo.svg";
 
     import ContactButton from "~/components/ui-element/buttons/wavey/index.vue";
 
     @Component({
         components: {
-            ContactButton
+            ContactButton,
+            ActualLogo
         }
     })
     export default class extends Vue {}
 
 </script>
 
-<style lang="scss">
-    
-    @import "../../../scss/main.scss";
+<style lang="scss" scoped>
+
+    @import "@/scss/main.scss";
 
     nav {
+        user-select: none;
         z-index: 99;
         width: 100%;
         height: 100px;
@@ -46,20 +52,42 @@
 
         background: white;
 
-        .left {
-            width: 300px;
-            height: 100%;
-            padding-left: 100px;
-
-            background: #f3f3f3;
+        @include breakTarget(iphone8-plus, (max-width: width), portrait) {
+            height: 70px;
         }
 
-        .right {
+        .pull-left {
+            width: 250px;
             height: 100%;
-            padding-right: 100px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            #ActualLogo {
+                width: 100%;
+                max-height: 60%;
+                
+                #Roof, #ctual {
+                    fill: #333;
+                }
+                #A {
+                    fill: $actual-orange;
+                }
+                
+            }
+        }
+
+        .pull-right {
+            height: 100%;
+            padding-right: 5%;
 
             display: flex;
             align-items: center;
+
+            @include breakTarget(ipad, (max-width: width), portrait) {
+            //& { padding: 0 10px; }
+            }
 
             ul {
                 margin-right: 50px;

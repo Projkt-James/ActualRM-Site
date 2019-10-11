@@ -71,28 +71,41 @@
 <style lang="scss" scoped>
 
     @import url('https://fonts.googleapis.com/css?family=Lato:300,900|Raleway:700');
+    @import "@scss/main.scss";
 
     div#services-container {
         min-height: 100vh;
 
         display: flex;
         justify-content: center;
-        //align-items: center;
 
         #content {
             width: 80vw;
+            font-size: 90px;
+
+            @include breakTarget(ipad-pro, (max-width: width), portrait) {
+                width: calc(80vw + 40px);
+                font-size: 90px;
+            }
+            @include breakTarget(ipad, (max-width: width), portrait) {
+                font-size: 80px;
+            }
+            @include breakTarget(iphone8-plus, (max-width: width), portrait) {
+                font-size: 60px;
+            }
 
             > header {
+                padding-left: 20px;
                 h1, h2 {
                     margin: 0 !important;
                     color: #4c4b4d;
                     font-family: 'Lato', sans-serif;
                 }
                 h1 {
-                    font-size: 80px;
+                    font-size: 80%;
                 }
                 h2 {
-                    font-size: 70px;
+                    font-size: 70%;
                     font-weight: 300;
                 }
                 // TODO: Move underblock into standard component
@@ -109,10 +122,6 @@
             #services-grid {
 
                 margin: 50px auto;
-
-                @media(max-width: 1000px) {
-                    margin: 50px 100px;
-                }
 
                 #services-row {
                     
@@ -144,7 +153,17 @@
                         @media(min-width: 2111px) {
                             flex-basis: 25%;
                         }
-
+                        @include breakTarget(ipad-pro, (max-width: width), portrait) {
+                            flex-basis: 50%;
+                        }
+                        @include breakTarget(ipad, (max-width: width), portrait) {
+                            flex-basis: 100%;
+                            margin: 0 30px;
+                        }
+                        @include breakTarget(iphone8-plus, (max-width: width), portrait) {
+                            flex-basis: 100%;
+                            margin: 0;
+                        }
 
                         #service-item-wrapper {
                             
@@ -170,6 +189,11 @@
                                     height: 100px;
                                     background-color: #ea6c5685;
                                     display: block;
+
+                                    @include breakTarget(iphone8-plus, (max-width: width), portrait) {
+                                        min-width: 70px;
+                                        height: 70px;
+                                    }
                                 }
                                 h1 {
                                     margin-left: 40px;
@@ -178,7 +202,12 @@
                                     color: #333;
                                     font-size: 25px;
                                     font-family: 'Raleway', sans-serif;
-                                    text-transform: uppercase
+                                    text-transform: uppercase;
+
+                                    @include breakTarget(iphone8-plus, (max-width: width), portrait) {
+                                        margin-left: 20px;
+                                        font-size: 20px;
+                                    }
                                 }
                             }
 

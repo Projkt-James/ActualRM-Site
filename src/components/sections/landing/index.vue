@@ -38,6 +38,11 @@
             opacity: 0.94;
 
             padding: 0 100px;
+
+            @include breakTarget(ipad, (max-width: width), portrait) {
+                & { padding: 0 50px; }
+            }
+
         }
 
         h1 {
@@ -52,6 +57,10 @@
 
             span.light {
                 font-weight: 300;
+            }
+
+            @include breakTarget(iphone8-plus, (max-width: width), portrait) {
+                & { font-size: 40px !important; }
             }
         }
     }

@@ -60,7 +60,6 @@
     #contact-container {
 
         width: 100%;
-        min-height: calc(100vh - 100px);
 
         display: flex;
         flex-wrap: wrap;
@@ -70,6 +69,7 @@
         #content {
             position: relative;
             width: 70%;
+            margin-bottom: 10vh;
 
             display: flex;
             justify-content: center;

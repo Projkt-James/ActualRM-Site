@@ -39,6 +39,10 @@
 
     body {
         margin: 0;
+
+        > div {
+            overflow-x: hidden;
+        }
     }
 
 </style>

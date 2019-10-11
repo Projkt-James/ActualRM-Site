@@ -40,6 +40,7 @@
 
 <style lang="scss" scoped>
 
+    @import "@/scss/main.scss";
     @import url('https://fonts.googleapis.com/css?family=Lato:100,300,900');
 
     div#company-container {
@@ -50,6 +51,8 @@
         justify-content: center;
         align-items: center;
 
+        font-size: 100px;
+
         #content {
             position: relative;
             width: 80%;
@@ -57,6 +60,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @include breakTarget(ipad-pro, (max-width: width), portrait) {
+                flex-direction: column;
+            }
         }
 
         section.qld {
@@ -64,12 +71,36 @@
             height: 50%;
             display: block;
             margin-right: 10%;
+
+            @include breakTarget(ipad-pro, (max-width: width), portrait) {
+                width: 60%;
+                margin-right: 5;
+            }
+            @include breakTarget(ipad-pro, (max-width: width), landscape) {
+                width: 45%;
+                margin-right: 8%;
+            }
         }
 
         section.text-area {
 
             max-width: 45%;
             padding-left: 50px;
+
+            @include breakTarget(ipad-pro, (max-width: width), portrait) {
+                max-width: 100%;
+                font-size: 80px;
+                padding-left: 0;
+            }
+            @include breakTarget(ipad-pro, (max-width: width), landscape) {
+                font-size: 85px;
+            }
+            @include breakTarget(ipad, (max-width: width), portrait) {
+                font-size: 70px;
+            }
+            @include breakTarget(iphone8-plus, (max-width: width), portrait) {
+                font-size: 50px;
+            }
 
             header {
                 h1, h2 {
@@ -78,10 +109,10 @@
                     font-family: 'Lato', sans-serif;
                 }
                 h1 {
-                    font-size: 90px;
+                    font-size: 90%;
                 }
                 h2 {
-                    font-size: 80px;
+                    font-size: 80%;
                     font-weight: 300;
                 }
                 // TODO: Move underblock into standard component
@@ -96,13 +127,17 @@
             }
 
             p {
-
                 margin-top: 50px;
 
                 color: #b1b1b1;
                 font-family: 'Lato', sans-serif;
-                font-size: 24px;
+                font-size: 27%;
                 line-height: 130%;
+
+                @include breakTarget(iphone8-plus, (max-width: width), portrait) {
+                    margin-top: 20px;
+                    font-size: 30%;
+                }
             }
         }
     }
