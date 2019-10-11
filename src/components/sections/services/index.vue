@@ -14,7 +14,7 @@
                     <div id="service-item" v-for="item in serviceItems" :key="item.title">
                         <div id="service-item-wrapper">
                             <header>
-                                <span></span>
+                                <span><component v-bind:is="item.icon" /></span>
                                 <h1>{{ item.title }}</h1>
                             </header>
                             <p>{{ item.text }}</p>
@@ -29,39 +29,58 @@
 
 <script lang="ts">
 
-    import Vue from 'vue';
+    import Vue, { Component as VueComponent } from 'vue';
     import Component from 'vue-class-component';
+    // @ts-ignore
+    import BrushIcon from "@assets/icons/brush.svg";
 
     class ServiceElement {
 
+        icon: VueComponent;
         title: string;
         text: string;
+        
 
-        constructor(title: string, text: string) {
-            this.title = title;
-            this.text = text;
+        constructor(obj: { icon: VueComponent, title: string, text: string }) {
+            this.icon = obj.icon;
+            this.title = obj.title;
+            this.text = obj.text;
         }
     }
 
     @Component({
         components: {
-            
+            BrushIcon
         }
     })
     export default class extends Vue {
 
         serviceItems: ServiceElement[] = [
-            new ServiceElement(
-                "Painting & Plastering", 
-                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod"
-            ),
-            new ServiceElement(
-                "Tiling", 
-                "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod"
-            ),
-            new ServiceElement("Landscaping", ""),
-            new ServiceElement("Element4", ""),
-            new ServiceElement("Element5", "")
+            new ServiceElement({
+                icon: BrushIcon,
+                title: "Painting & Plastering", 
+                text: "Painting and plastering services to reinvigerate old spaces, repair abnormal damages or just to try somthing new."
+            }),
+            new ServiceElement({
+                icon: BrushIcon,
+                title: "Tiling", 
+                text: "Both indoor and outdoor tiling services with a keen eye for detail."
+            }),
+            new ServiceElement({
+                icon: BrushIcon,
+                title: "Roof Works", 
+                text: "Various roofwork services and solutions including but not limited to; gutter cleaning, leak repairs and signage installation."
+            }),
+            new ServiceElement({
+                icon: BrushIcon,
+                title: "Shop Fitting", 
+                text: ""
+            }),
+            new ServiceElement({
+                icon: BrushIcon,
+                title: "Landscaping", 
+                text: ""
+            })
         ];
 
     }
@@ -70,7 +89,7 @@
 
 <style lang="scss" scoped>
 
-    @import url('https://fonts.googleapis.com/css?family=Lato:300,900|Raleway:700');
+    @import url('https://fonts.googleapis.com/css?family=Lato:300,900|Raleway:700|Roboto:300,600');
     @import "@scss/main.scss";
 
     div#services-container {
@@ -185,10 +204,16 @@
                                 display: flex;
 
                                 span {
-                                    min-width: 100px;
+                                    width: 100px;
                                     height: 100px;
-                                    background-color: #ea6c5685;
-                                    display: block;
+                                    //background-color: #ea6c5685;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    svg {
+                                        width: 70%;
+                                    }
 
                                     @include breakTarget(iphone8-plus, (max-width: width), portrait) {
                                         min-width: 70px;
@@ -212,9 +237,9 @@
                             }
 
                             p {
-                                color: #b3b3b3;
+                                color: #888;
                                 font-size: 18px;
-                                font-family: 'Lato', sans-serif;
+                                font-family: 'Roboto', sans-serif;
                                 font-weight: 300;
                             }
                         }

@@ -5,10 +5,13 @@
         </div>
         <div class="pull-right">
             <ul>
-                <li v-scroll-to="'#company-container'">Company</li>
+                <li v-scroll-to="{
+                    el: '#company-container'
+                }">
+                Company</li>
                 <li v-scroll-to="{
                     el: '#services-container',
-                    offset: -125
+                    offset: -90
                 }">
                     Our Services
                 </li>
@@ -64,6 +67,7 @@
             justify-content: center;
             align-items: center;
 
+            // SVG Logo Styling
             #ActualLogo {
                 width: 100%;
                 max-height: 60%;
@@ -74,7 +78,6 @@
                 #A {
                     fill: $actual-orange;
                 }
-                
             }
         }
 

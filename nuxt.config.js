@@ -30,6 +30,7 @@ export default {
                 }
             }
           });
+          config.resolve.alias["@assets"] = "~/assets";
           config.resolve.alias["@scss"] = "~/scss/";
         }
     },
