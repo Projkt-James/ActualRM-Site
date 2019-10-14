@@ -15,7 +15,18 @@
 
                 <!-- TODO: Break this out to component -->
                 <div id="form-panel">
-                    <div></div>
+                    <div>
+                        <MatTextInput 
+                            id="name"
+                            label="Name"
+                            spellcheck="off"
+                        />
+                        <MatTextInput 
+                            id="email" 
+                            label="Email"
+                            spellcheck="off"
+                        />
+                    </div>
                     <button></button>
                 </div>
             </section>
@@ -38,9 +49,12 @@
     import Component from 'vue-class-component';
 
     import MapStyle from '~/map-style.js';
+    import MatTextInput from "~/components/ui-element/input/mat-textinput.vue";
 
     @Component({
-        components: {}
+        components: {
+            MatTextInput
+        }
     })
     export default class extends Vue {
 
@@ -124,9 +138,16 @@
                     -moz-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.15);
                     box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.15);
 
-                    div {
-                        display: block;
+                    > div {
+                        padding: 50px;
+                        
+                        display: flex;
+                        justify-content: space-between;
                         flex-grow: 1;
+
+                        .matTextInput {
+                            width: 45%;
+                        }
                     }
 
                     button {
