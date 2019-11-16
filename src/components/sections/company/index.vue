@@ -10,16 +10,11 @@
             
             <section class="text-area">
                 <header>
-                    <h1>tailored for</h1>
-                    <h2>SE Queensland</h2>
+                    <h1>{{ dataStore.headerTopline }}</h1>
+                    <h2>{{ dataStore.headerBottomline }}</h2>
                     <span class="underblock"></span>
                 </header>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
-                    magna aliquam erat volutpat. Ut dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat 
-                    nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis 
-                    dolore te feugait nulla facilisi.
-                </p>
+                <p>{{ dataStore.text }}</p>
             </section>
         </div>
 
@@ -32,9 +27,17 @@
     import Component from 'vue-class-component';
 
     @Component({
-        components: {}
+        components: {},
+        computed: {
+            dataStore () { return this.$store.state.companySectionData }
+        }
     })
-    export default class extends Vue {}
+    export default class extends Vue {
+        mounted() {
+            console.log("The state is empty :(");
+            console.log(JSON.stringify(this.$store.state.companySectionData));
+        }
+    }
 
 </script>
 
@@ -74,7 +77,7 @@
 
             @include breakTarget(ipad-pro, (max-width: width), portrait) {
                 width: 60%;
-                margin-right: 5;
+                margin-right: 5%;
             }
             @include breakTarget(ipad-pro, (max-width: width), landscape) {
                 width: 45%;

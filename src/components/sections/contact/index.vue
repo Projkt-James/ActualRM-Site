@@ -88,6 +88,7 @@
             display: flex;
             justify-content: center;
 
+
             section.contact, section.in-touch {
                 width: 50%;
                 height: 100%;
@@ -157,6 +158,53 @@
                         background-color: $actual-orange;
                         border: none;
                         outline: none;
+                    }
+                }
+            }
+
+            @include breakTarget(ipad-pro, (max-width: width), portrait) {
+                margin-bottom: 20vh;
+                flex-direction: column;
+
+                section.contact, section.in-touch {
+                    width: 100%;
+
+                    header {
+                        margin-bottom: 10%;
+                    }
+                }
+            }
+
+            @include breakTarget(ipad, (max-width: width), portrait) {
+
+                margin-bottom: 30vh;
+
+                
+
+                section.contact ul {
+                    margin-bottom: 20%;
+                }
+            }
+
+            @include breakTarget(iphone8-plus, (max-width: width), portrait) {
+                width: 80%;
+
+                section.in-touch {
+                    #form-panel {
+
+                        width: 110%;
+                        margin-left: -5%;
+
+                        flex-direction: column;
+
+                        > div .matTextInput {
+                            width: 100%;
+                        }
+
+                        button {
+                            width: 100%;
+                            height: 50px;
+                        }
                     }
                 }
             }

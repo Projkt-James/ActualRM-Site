@@ -16,7 +16,11 @@
                     Our Services
                 </li>
             </ul>
-            <ContactButton text="Contact Us" v-scroll-to="'#contact-container'"></ContactButton>
+            <ContactButton text="Contact Us" v-scroll-to="{
+                el: '#contact-container',
+                offset: 0
+            }">
+            </ContactButton>
         </div>
     </nav>
 </template>
